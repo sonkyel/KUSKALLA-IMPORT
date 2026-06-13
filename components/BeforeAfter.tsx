@@ -33,8 +33,8 @@ export function BeforeAfter() {
     <section id="antes-despues" className="bg-charcoal py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <Reveal>
-          <p className="kicker text-accent">El cambio</p>
-          <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <p className="kicker text-accent text-center md:text-left">El cambio</p>
+          <div className="mt-3 flex flex-col items-center justify-between gap-4 text-center md:flex-row md:items-end md:text-left">
             <h2 className="font-[var(--font-display)] text-3xl font-bold md:text-5xl">
               Antes y después
             </h2>

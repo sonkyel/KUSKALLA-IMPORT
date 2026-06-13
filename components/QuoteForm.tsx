@@ -41,18 +41,18 @@ export function QuoteForm() {
   return (
     <section id="cotizar" className="bg-charcoal py-20 md:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-2 md:px-8">
-        <Reveal>
+        <Reveal className="text-center md:text-left">
           <p className="kicker text-accent">Cotización</p>
           <h2 className="mt-3 font-[var(--font-display)] text-3xl font-bold md:text-5xl">
             Pide tu cotización
           </h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/65">
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/65 mx-auto md:mx-0">
             Completa tus datos y te enviamos el precio por WhatsApp en minutos.
             Importadores directos: el mejor precio del mercado, sin intermediarios.
           </p>
           <div className="mt-8 space-y-3 text-sm text-cream/70">
-            <p className="flex items-center gap-2"><PinIcon className="h-4 w-4 text-accent" /> {site.address}</p>
-            <p className="flex items-center gap-2"><ClockIcon className="h-4 w-4 text-accent" /> {site.hours}</p>
+            <p className="flex items-center justify-center gap-2 md:justify-start"><PinIcon className="h-4 w-4 text-accent" /> {site.address}</p>
+            <p className="flex items-center justify-center gap-2 md:justify-start"><ClockIcon className="h-4 w-4 text-accent" /> {site.hours}</p>
             <a href={`mailto:${site.email}`} className="block hover:text-cream">{site.email}</a>
           </div>
         </Reveal>

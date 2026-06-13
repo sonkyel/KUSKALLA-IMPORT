@@ -91,8 +91,8 @@ export function ProjectsStack() {
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="kicker text-accent">Proyectos</p>
-          <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <p className="kicker text-accent text-center md:text-left">Proyectos</p>
+          <div className="mt-3 flex flex-col items-center justify-between gap-4 text-center md:flex-row md:items-end md:text-left">
             <h2 className="font-[var(--font-display)] text-3xl font-bold md:text-5xl">
               Espacios transformados
             </h2>

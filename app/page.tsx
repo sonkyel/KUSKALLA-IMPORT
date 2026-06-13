@@ -65,9 +65,9 @@ export default function Home() {
       {/* ===== VALUE PROPS ===== */}
       <section className="border-y border-white/5 bg-charcoal-2 py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <Reveal>
+          <Reveal className="text-center md:text-left">
             <p className="kicker text-accent">¿Por qué elegirnos?</p>
-            <h2 className="mt-3 max-w-2xl font-[var(--font-display)] text-3xl font-bold md:text-4xl">
+            <h2 className="mt-3 max-w-2xl font-[var(--font-display)] text-3xl font-bold md:text-4xl mx-auto md:mx-0">
               Calidad premium, sin complicaciones
             </h2>
           </Reveal>
@@ -76,8 +76,8 @@ export default function Home() {
               const Icon = valueIcons[vp.icon];
               return (
                 <Reveal key={vp.title} delay={i * 0.08}>
-                  <div className="border-t border-white/10 pt-6">
-                    <div className="text-accent">
+                  <div className="border-t border-white/10 pt-6 text-center md:text-left">
+                    <div className="text-accent flex justify-center md:justify-start">
                       <Icon className="h-8 w-8" />
                     </div>
                     <h3 className="mt-4 font-[var(--font-display)] text-lg font-semibold">
@@ -104,8 +104,8 @@ export default function Home() {
       <section id="catalogo" className="bg-charcoal-2 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
-            <p className="kicker text-accent">Catálogo 2026</p>
-            <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <p className="kicker text-accent text-center md:text-left">Catálogo 2026</p>
+            <div className="mt-3 flex flex-col items-center justify-between gap-4 text-center md:flex-row md:items-end md:text-left">
               <h2 className="font-[var(--font-display)] text-3xl font-bold md:text-5xl">
                 Todas las posibilidades, en un solo lugar
               </h2>
@@ -140,14 +140,14 @@ export default function Home() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
+                  <div className="flex flex-1 flex-col p-5 text-center md:text-left">
                     <h3 className="font-[var(--font-display)] text-lg font-semibold">
                       {p.name}
                     </h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-cream/55">
                       {p.description}
                     </p>
-                    <div className="mt-4 flex items-center gap-4 border-t border-white/10 pt-4">
+                    <div className="mt-4 flex items-center justify-center gap-4 border-t border-white/10 pt-4 md:justify-between">
                       {p.catalog && (
                         <a
                           href={p.catalog}
@@ -163,7 +163,7 @@ export default function Home() {
                         href={wa(`Hola Kuskalla, quiero cotizar: ${p.name}.`)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="ml-auto inline-flex items-center gap-1.5 text-sm font-bold text-accent"
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-accent"
                       >
                         <WhatsappIcon className="h-4 w-4" />
                         Cotizar
@@ -184,8 +184,8 @@ export default function Home() {
       <section id="videos" className="border-t border-white/5 bg-charcoal-2 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
-            <p className="kicker text-accent">Síguenos</p>
-            <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <p className="kicker text-accent text-center md:text-left">Síguenos</p>
+            <div className="mt-3 flex flex-col items-center justify-between gap-4 text-center md:flex-row md:items-end md:text-left">
               <h2 className="font-[var(--font-display)] text-3xl font-bold md:text-5xl">
                 Míranos en acción
               </h2>
@@ -200,7 +200,7 @@ export default function Home() {
             <TikTokFeed />
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap justify-center gap-3 md:justify-start">
             <a href={site.tiktok} target="_blank" rel="noopener noreferrer" className="btn-accent inline-flex items-center px-5 py-3 text-sm font-bold">
               Ver TikTok
             </a>
@@ -227,18 +227,18 @@ export default function Home() {
       <section id="ubicacion" className="border-t border-white/5 bg-charcoal-2 py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 md:grid-cols-12 md:px-8">
           <div className="md:col-span-5">
-            <Reveal>
+            <Reveal className="text-center md:text-left">
               <p className="kicker text-accent">Showroom · Visítanos</p>
               <h2 className="mt-3 font-[var(--font-display)] text-3xl font-bold md:text-4xl">
                 Conoce los acabados en persona
               </h2>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/65">
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/65 mx-auto md:mx-0">
                 Ven a nuestro showroom en Los Olivos: toca las texturas, compara
                 diseños y resuelve tus dudas con nuestra asesoría.
               </p>
 
               <div className="mt-8 space-y-5">
-                <div className="flex items-start gap-3">
+                <div className="flex items-start justify-center gap-3 md:justify-start">
                   <PinIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   <div>
                     <p className="font-semibold">{site.address}</p>
@@ -247,11 +247,11 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start justify-center gap-3 md:justify-start">
                   <ClockIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   <p className="font-semibold">{site.hours}</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center gap-3 md:justify-start">
                   <div className="flex text-accent">
                     {[0, 1, 2, 3, 4].map((s) => (
                       <StarIcon key={s} className="h-4 w-4" />
@@ -263,7 +263,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
                 <a
                   href={wa("Hola Kuskalla, quiero más información.")}
                   target="_blank"

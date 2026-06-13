@@ -66,7 +66,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         variants={containerVariants}
       >
         {/* Lado izquierdo: contenido */}
-        <div className="flex w-full flex-col justify-between p-8 pt-28 md:w-1/2 md:p-12 md:pt-28 lg:w-3/5 lg:p-16 lg:pt-32">
+        <div className="flex w-full flex-col justify-between p-8 pt-28 text-center md:w-1/2 md:p-12 md:pt-28 md:text-left lg:w-3/5 lg:p-16 lg:pt-32">
           <div>
             {slogan && (
               <motion.p className="kicker text-accent" variants={itemVariants}>
@@ -81,11 +81,11 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               >
                 {title}
               </motion.h1>
-              <motion.div className="my-7 h-1 w-20 bg-accent" variants={itemVariants} />
-              <motion.p className="mb-9 max-w-md text-base leading-relaxed text-cream/65" variants={itemVariants}>
+              <motion.div className="my-7 h-1 w-20 bg-accent mx-auto md:mx-0" variants={itemVariants} />
+              <motion.p className="mb-9 max-w-md text-base leading-relaxed text-cream/65 mx-auto md:mx-0" variants={itemVariants}>
                 {subtitle}
               </motion.p>
-              <motion.div className="flex flex-wrap items-center gap-4" variants={itemVariants}>
+              <motion.div className="flex flex-wrap items-center justify-center gap-4 md:justify-start" variants={itemVariants}>
                 <a href={callToAction.href} target="_blank" rel="noopener noreferrer" className="btn-accent inline-flex items-center px-6 py-3.5 text-sm font-bold tracking-widest">
                   {callToAction.text}
                 </a>
@@ -101,15 +101,15 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           {/* Pie: datos de contacto */}
           <motion.footer className="mt-12 w-full" variants={itemVariants}>
             <div className="grid grid-cols-1 gap-4 text-xs text-cream/55 sm:grid-cols-3">
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <InfoIcon type="website" />
                 <span>{contactInfo.website}</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <InfoIcon type="phone" />
                 <span>{contactInfo.phone}</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <InfoIcon type="address" />
                 <span>{contactInfo.address}</span>
               </div>

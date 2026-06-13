@@ -11,7 +11,7 @@ export function Faq() {
   return (
     <section id="faq" className="bg-charcoal-2 py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
-        <Reveal>
+        <Reveal className="text-center md:text-left">
           <p className="kicker text-accent">Preguntas frecuentes</p>
           <h2 className="mt-3 font-[var(--font-display)] text-3xl font-bold md:text-5xl">
             Resolvemos tus dudas

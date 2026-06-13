@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --charcoal: #161a2b;
+  --charcoal-2: #1d2238;
+  --cream: #f5f3ef;
+  --accent: #3da7d7;       /* azul cielo del logo */
+  --accent-deep: #14274f;  /* azul marino del logo */
+  --muted: #9aa0a6;
+}
+
+@theme inline {
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-2: var(--charcoal-2);
+  --color-cream: var(--cream);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-muted: var(--muted);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+html {
+  background: var(--charcoal);
+  color: var(--cream);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--charcoal);
+  color: var(--cream);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+/* Las anclas no quedan ocultas bajo el menú fijo */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Espacio para la barra de acción fija en móvil */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 3.5rem;
+  }
+}
+
+::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+/* Etiqueta tipo kicker */
+.kicker {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Botón de acento (CTA principal) — azul cielo del logo */
+.btn-accent {
+  background: var(--accent);
+  color: #0c1224;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+.btn-accent:hover {
+  background: #57b6e2;
+}
+
+/* Botón crema */
+.btn-cream {
+  background: var(--cream);
+  color: var(--charcoal);
+  transition: background-color 0.25s ease;
+}
+.btn-cream:hover {
+  background: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -9,7 +9,7 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-charcoal-2 py-20 md:py-28">
+    <section id="faq" className="bg-charcoal-2 py-14 md:py-28">
       <div className="mx-auto max-w-3xl px-5 md:px-8">
         <Reveal className="text-center md:text-left">
           <p className="kicker text-accent">Preguntas frecuentes</p>

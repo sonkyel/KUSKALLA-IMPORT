@@ -6,7 +6,7 @@ const badgeIcons = { truck: TruckIcon, drop: DropIcon, click: ClickIcon, shield:
 
 export function Process() {
   return (
-    <section id="proceso" className="bg-charcoal py-20 md:py-28">
+    <section id="proceso" className="bg-charcoal py-14 md:py-28">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal className="text-center md:text-left">
           <p className="kicker text-accent">Cómo trabajamos</p>

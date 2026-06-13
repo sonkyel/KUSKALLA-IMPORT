@@ -30,7 +30,7 @@ export function BeforeAfter() {
   const stop = () => setDragging(false);
 
   return (
-    <section id="antes-despues" className="bg-charcoal py-20 md:py-28">
+    <section id="antes-despues" className="bg-charcoal py-14 md:py-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <Reveal>
           <p className="kicker text-accent text-center md:text-left">El cambio</p>

@@ -8,6 +8,8 @@ import { HeroSection } from "@/components/HeroSection";
 import { Process } from "@/components/Process";
 import { Faq } from "@/components/Faq";
 import { QuoteForm } from "@/components/QuoteForm";
+import { CatalogGrid } from "@/components/CatalogGrid";
+import { LazyMap } from "@/components/LazyMap";
 import {
   TruckIcon,
   DropIcon,
@@ -23,7 +25,6 @@ import {
   site,
   wa,
   valueProps,
-  products,
   heroImage,
   catalogUrl,
 } from "@/lib/content";
@@ -63,7 +64,7 @@ export default function Home() {
       />
 
       {/* ===== VALUE PROPS ===== */}
-      <section className="border-y border-white/5 bg-charcoal-2 py-20">
+      <section className="border-y border-white/5 bg-charcoal-2 py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal className="text-center md:text-left">
             <p className="kicker text-accent">¿Por qué elegirnos?</p>
@@ -101,7 +102,7 @@ export default function Home() {
       <BeforeAfter />
 
       {/* ===== CATÁLOGO ===== */}
-      <section id="catalogo" className="bg-charcoal-2 py-20 md:py-28">
+      <section id="catalogo" className="bg-charcoal-2 py-14 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <p className="kicker text-accent text-center md:text-left">Catálogo 2026</p>
@@ -127,53 +128,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {products.map((p, i) => (
-              <Reveal key={p.id} delay={(i % 4) * 0.06}>
-                <div className="group flex h-full flex-col overflow-hidden border border-white/10 bg-charcoal transition-colors hover:border-accent/50">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={p.image}
-                      alt={p.name}
-                      fill
-                      sizes="(max-width:768px) 100vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col p-5 text-center md:text-left">
-                    <h3 className="font-[var(--font-display)] text-lg font-semibold">
-                      {p.name}
-                    </h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-cream/55">
-                      {p.description}
-                    </p>
-                    <div className="mt-4 flex items-center justify-center gap-4 border-t border-white/10 pt-4 md:justify-between">
-                      {p.catalog && (
-                        <a
-                          href={p.catalog}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-bold text-cream/80 transition-colors hover:text-accent"
-                        >
-                          Ver catálogo
-                          <ArrowIcon className="h-3.5 w-3.5" />
-                        </a>
-                      )}
-                      <a
-                        href={wa(`Hola Kuskalla, quiero cotizar: ${p.name}.`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-bold text-accent"
-                      >
-                        <WhatsappIcon className="h-4 w-4" />
-                        Cotizar
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <CatalogGrid />
         </div>
       </section>
 
@@ -181,7 +136,7 @@ export default function Home() {
       <ProjectsStack />
 
       {/* ===== VIDEOS (TikTok) ===== */}
-      <section id="videos" className="border-t border-white/5 bg-charcoal-2 py-20 md:py-28">
+      <section id="videos" className="border-t border-white/5 bg-charcoal-2 py-14 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <p className="kicker text-accent text-center md:text-left">Síguenos</p>
@@ -224,7 +179,7 @@ export default function Home() {
       <QuoteForm />
 
       {/* ===== UBICACIÓN + RESEÑAS ===== */}
-      <section id="ubicacion" className="border-t border-white/5 bg-charcoal-2 py-20 md:py-28">
+      <section id="ubicacion" className="border-t border-white/5 bg-charcoal-2 py-14 md:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 md:grid-cols-12 md:px-8">
           <div className="md:col-span-5">
             <Reveal className="text-center md:text-left">
@@ -282,15 +237,7 @@ export default function Home() {
 
           <div className="md:col-span-7">
             <Reveal delay={0.1}>
-              <div className="relative aspect-[16/11] w-full overflow-hidden border border-white/10">
-                <iframe
-                  title="Ubicación de Kuskalla Import"
-                  src="https://www.google.com/maps?q=Av.%20Tom%C3%A1s%20Valle%20806%2C%20Lima%2015103%2C%20Per%C3%BA&output=embed"
-                  className="absolute inset-0 h-full w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
+              <LazyMap />
             </Reveal>
           </div>
         </div>
@@ -300,7 +247,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <Image src="/img/wall-panel.webp" alt="" fill sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-charcoal/85" />
-        <div className="relative z-10 mx-auto max-w-3xl px-5 py-24 text-center md:px-8">
+        <div className="relative z-10 mx-auto max-w-3xl px-5 py-16 md:py-24 text-center md:px-8">
           <Reveal>
             <h2 className="font-[var(--font-display)] text-3xl font-bold md:text-5xl">
               ¿Listo para el cambio?

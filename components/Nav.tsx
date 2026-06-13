@@ -51,7 +51,7 @@ export function Nav() {
           href={wa("Hola Kuskalla, quiero cotizar acabados premium.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-accent inline-flex items-center gap-2 px-4 py-2.5 text-sm font-bold"
+          className="btn-accent hidden items-center gap-2 px-4 py-2.5 text-sm font-bold md:inline-flex"
         >
           <WhatsappIcon className="h-4 w-4" />
           Cotizar

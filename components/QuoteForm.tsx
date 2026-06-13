@@ -39,7 +39,7 @@ export function QuoteForm() {
     "w-full border border-white/15 bg-charcoal px-4 py-3 text-sm text-cream placeholder-cream/40 outline-none transition-colors focus:border-accent";
 
   return (
-    <section id="cotizar" className="bg-charcoal py-20 md:py-28">
+    <section id="cotizar" className="bg-charcoal py-14 md:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-5 md:grid-cols-2 md:px-8">
         <Reveal className="text-center md:text-left">
           <p className="kicker text-accent">Cotización</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Videos reales de @kuskallaimport (TikTok). Se incrustan con el embed oficial.
 const VIDEOS = [
@@ -17,8 +17,28 @@ declare global {
 
 export function TikTokFeed() {
   const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
+  // Carga los embeds solo cuando la sección está cerca del viewport.
   useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" },
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, []);
+
+  // Inyecta/ejecuta el script de TikTok solo cuando ya es visible.
+  useEffect(() => {
+    if (!visible) return;
     const SCRIPT_ID = "tiktok-embed-script";
     const render = () => window.tiktokEmbed?.lib?.render?.(ref.current ?? document);
 
@@ -33,7 +53,7 @@ export function TikTokFeed() {
     script.async = true;
     script.onload = render;
     document.body.appendChild(script);
-  }, []);
+  }, [visible]);
 
   return (
     <div

@@ -83,7 +83,7 @@ export function ProjectsStack() {
   const { w, h } = useCardSize();
 
   return (
-    <section id="proyectos" className="overflow-hidden bg-charcoal py-20 md:py-28">
+    <section id="proyectos" className="overflow-hidden bg-charcoal py-14 md:py-28">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

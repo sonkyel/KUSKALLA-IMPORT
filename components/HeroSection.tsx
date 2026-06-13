@@ -72,12 +72,13 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/85 to-charcoal/25" />
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-charcoal to-transparent" />
+          <div className="absolute inset-0 bg-charcoal/45" />
+          <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-charcoal via-charcoal/60 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-charcoal via-charcoal/70 to-transparent" />
 
-          <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-36 pt-28 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]">
+          <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-28 pt-24 [text-shadow:0_2px_14px_rgba(0,0,0,0.85)]">
             {slogan && (
-              <motion.p className="kicker text-accent" variants={itemVariants}>
+              <motion.p className="kicker text-cream/90" variants={itemVariants}>
                 {slogan}
               </motion.p>
             )}

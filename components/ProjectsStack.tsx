@@ -103,7 +103,7 @@ export function ProjectsStack() {
           </div>
         </motion.div>
 
-        <div className="mt-10">
+        <div className="mt-4 md:mt-10">
           <CardStack
             items={PROJECTS}
             cardWidth={w}

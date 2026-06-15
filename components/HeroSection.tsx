@@ -86,6 +86,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             description={subtitle}
             primaryCta={callToAction}
             secondaryCta={secondaryCta ?? { text: "Ver catálogo", href: "#catalogo" }}
+            bgImage={backgroundImage}
           />
         </div>
       </div>

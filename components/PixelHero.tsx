@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { products, wa } from "@/lib/content";
+import { products } from "@/lib/content";
 
 function cn(...classes: Array<string | undefined | null | false>) {
   return classes.filter(Boolean).join(" ");
@@ -133,6 +134,7 @@ interface PixelHeroProps {
   description: string;
   primaryCta: { text: string; href: string };
   secondaryCta: { text: string; href: string };
+  bgImage?: string;
 }
 
 // Colores de los píxeles: mayoría pizarra oscura + algunos en acento celeste.
@@ -140,7 +142,7 @@ const PIXEL_COLORS = ["#27324a", "#2c3852", "#33415f", "#3a4a6b", "#3da7d7"];
 
 const marqueeItems = products.map((p) => p.name);
 
-export function PixelHero({ word1, word2, description, primaryCta, secondaryCta }: PixelHeroProps) {
+export function PixelHero({ word1, word2, description, primaryCta, secondaryCta, bgImage }: PixelHeroProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -179,8 +181,21 @@ export function PixelHero({ word1, word2, description, primaryCta, secondaryCta 
         @keyframes kk-shimmer { 0% { background-position: 200% center; } 100% { background-position: 0% center; } }
       `}</style>
 
-      {/* Fondo de píxeles */}
+      {/* Fondo: acabado (mármol) atenuado + píxeles animados */}
       <div className="pointer-events-none absolute inset-0 z-0">
+        {bgImage && (
+          <>
+            <Image
+              src={bgImage}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-35"
+            />
+            <div className="absolute inset-0 bg-charcoal/70" />
+          </>
+        )}
         <PixelCanvas colors={PIXEL_COLORS} gap={6} speed={30} />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--charcoal)_100%)] opacity-80" />
       </div>

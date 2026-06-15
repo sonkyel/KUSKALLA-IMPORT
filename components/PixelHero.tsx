@@ -191,9 +191,9 @@ export function PixelHero({ word1, word2, description, primaryCta, secondaryCta,
               fill
               priority
               sizes="100vw"
-              className="object-cover opacity-35"
+              className="object-cover opacity-70"
             />
-            <div className="absolute inset-0 bg-charcoal/70" />
+            <div className="absolute inset-0 bg-charcoal/45" />
           </>
         )}
         <PixelCanvas colors={PIXEL_COLORS} gap={6} speed={30} />
@@ -210,7 +210,7 @@ export function PixelHero({ word1, word2, description, primaryCta, secondaryCta,
 
       {/* Descripción */}
       <div className="pointer-events-none z-10 flex w-full flex-col items-center justify-center px-1 text-center">
-        <p className="max-w-xl text-lg font-light leading-relaxed text-cream/85 md:text-xl">
+        <p className="max-w-xl text-lg font-light leading-relaxed text-cream md:text-xl [text-shadow:0_2px_12px_rgba(0,0,0,0.85)]">
           {description}
         </p>
       </div>

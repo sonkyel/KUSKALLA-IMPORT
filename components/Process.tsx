@@ -1,8 +1,6 @@
 import { Reveal } from "./Reveal";
-import { TruckIcon, DropIcon, ClickIcon, ShieldIcon, WhatsappIcon } from "./icons";
-import { steps, badges, shipping, wa } from "@/lib/content";
-
-const badgeIcons = { truck: TruckIcon, drop: DropIcon, click: ClickIcon, shield: ShieldIcon } as const;
+import { TruckIcon, WhatsappIcon } from "./icons";
+import { steps, shipping, wa } from "@/lib/content";
 
 export function Process() {
   return (
@@ -53,24 +51,6 @@ export function Process() {
             </a>
           </div>
         </Reveal>
-
-        {/* Sellos de garantía */}
-        <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
-          {badges.map((bdg, i) => {
-            const Icon = badgeIcons[bdg.icon];
-            return (
-              <Reveal key={bdg.title} delay={i * 0.06}>
-                <div className="flex flex-col items-center text-center">
-                  <Icon className="h-9 w-9 text-accent" />
-                  <h4 className="mt-3 font-[var(--font-display)] text-base font-semibold">
-                    {bdg.title}
-                  </h4>
-                  <p className="mt-1 text-xs leading-relaxed text-cream/55">{bdg.body}</p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
       </div>
     </section>
   );

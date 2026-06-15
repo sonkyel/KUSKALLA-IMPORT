@@ -194,19 +194,6 @@ export const steps: Step[] = [
   },
 ];
 
-// Sellos de garantía / calidad
-export interface Badge {
-  title: string;
-  body: string;
-  icon: "drop" | "click" | "truck" | "shield";
-}
-export const badges: Badge[] = [
-  { icon: "drop", title: "100% impermeable", body: "Resistente al agua y la humedad." },
-  { icon: "click", title: "Sistema click", body: "Instalación sin obra ni escombros." },
-  { icon: "truck", title: "Importación directa", body: "Mejor precio, sin intermediarios." },
-  { icon: "shield", title: "Garantía de materiales", body: "Productos de última generación." },
-];
-
 // Preguntas frecuentes
 export interface Faq {
   q: string;

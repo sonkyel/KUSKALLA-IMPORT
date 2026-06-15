@@ -112,7 +112,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           animate="visible"
           variants={containerVariants}
         >
-          <div className="flex w-full flex-col justify-between p-8 pt-28 md:w-1/2 md:p-12 md:pt-28 lg:w-3/5 lg:p-16 lg:pt-32">
+          <div className="flex w-full flex-col justify-center gap-12 p-8 pt-28 md:w-1/2 md:p-12 md:pt-24 lg:w-3/5 lg:p-16 lg:pt-28">
             <div>
               {slogan && (
                 <motion.p className="kicker text-accent" variants={itemVariants}>
@@ -144,7 +144,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               </motion.main>
             </div>
 
-            <motion.footer className="mt-12 w-full" variants={itemVariants}>
+            <motion.footer className="w-full" variants={itemVariants}>
               <div className="grid grid-cols-1 gap-4 text-xs text-cream/55 sm:grid-cols-3">
                 <div className="flex items-center">
                   <InfoIcon type="website" />
